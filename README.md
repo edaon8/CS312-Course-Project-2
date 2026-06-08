@@ -60,7 +60,7 @@ _Provisions the virtual server hardware, network rules, and outputs the public I
 
 Step 3) Automate Server Configuration
 ```bash
-ansible-playbook -i "$(terraform output -raw public_ip)," -u ubuntu --private-key /path/to/your-key.pem playbook.yml
+ansible-playbook -i "<INSTANCE_PUBLIC_IP>," -u ubuntu --private-key /path/to/your-key.pem playbook.yml
 ```
 _Installs Java/tmux, accepts the game EULA, deploys the graceful-shutdown service, and boots the application._
 
