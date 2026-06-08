@@ -26,23 +26,38 @@ Also, download the SSH kep (PEM) by clicking the button.
 ___
 
 ## Pipeline Diagram
-[Local Machine] ──(1) terraform apply ──► [AWS Security Group & EC2]
-       │
-       └──(2) ansible-playbook ────────► [Configures: Java 21, Tmux, systemd]
+```mermaid
+graph TD
+    Local[Local Workstation] -->|1. terraform apply| AWS[AWS Cloud Endpoint]
+    AWS --> SG[Security Group Firewall]
+    AWS --> EC2[EC2 Compute Instance]
+    
+    Local -->|2. ansible-playbook via SSH| EC2
+    
+    subgraph Target Machine State
+        EC2 --> Java[OpenJDK 21 JRE]
+        EC2 --> Tmux[Tmux Sockets]
+        EC2 --> Systemd[systemd Auto-Restart/Stop]
+    end
+
+    style Local fill:#f9f,stroke:#333,stroke-width:2px
+    style AWS fill:#bbf,stroke:#333,stroke-width:2px
+    style Target Machine State fill:#f96,stroke:#333,stroke-width:1px
+```
 ___
 ## Deployment Steps:
 Step 1) Initialize Terraform
-```
+```bash
 terraform init
 ```
 _Creates the necessary cloud provider infrastructure modules._
 Step 2) Build Cloud Infrastructure
-```
+```bash
 terraform apply -var="key_name=your-aws-key-name" -auto-approve
 ```
 _Provisions the virtual server hardware, network rules, and outputs the public IP address._
 Step 3) Automate Server Configuration
-```
+```bash
 ansible-playbook -i "$(terraform output -raw public_ip)," -u ubuntu --private-key /path/to/your-key.pem playbook.yml
 ```
 _Installs Java/tmux, accepts the game EULA, deploys the graceful-shutdown service, and boots the application._
