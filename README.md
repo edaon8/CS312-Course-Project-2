@@ -16,7 +16,7 @@ ___
 
 ### Environment & Authentication Setup
 Copy and paste your temporary AWS Academy tokens into a file:
-```
+```bash
 [default]
 aws_access_key_id=ASIAXXXXXXXXXXXXXXXX
 aws_secret_access_key=keHFnbm8FH5NvpBhdEXAMPLEKEY
@@ -51,21 +51,25 @@ Step 1) Initialize Terraform
 terraform init
 ```
 _Creates the necessary cloud provider infrastructure modules._
+
 Step 2) Build Cloud Infrastructure
 ```bash
 terraform apply -var="key_name=your-aws-key-name" -auto-approve
 ```
 _Provisions the virtual server hardware, network rules, and outputs the public IP address._
+
 Step 3) Automate Server Configuration
 ```bash
 ansible-playbook -i "$(terraform output -raw public_ip)," -u ubuntu --private-key /path/to/your-key.pem playbook.yml
 ```
 _Installs Java/tmux, accepts the game EULA, deploys the graceful-shutdown service, and boots the application._
+
 Step 4) Verification & Connection
 ```
 nmap -sV -Pn -p T:25565 <INSTANCE_PUBLIC_IP>
 ```
 _Verify using Nmap or connect using the Minecraft client._
+
 ### Expected Output:
  - Port: `25565/tcp`
  - State: `open`
