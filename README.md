@@ -45,7 +45,7 @@ graph TD
     style Target Machine State fill:#f96,stroke:#333,stroke-width:1px
 ```
 ___
-## Deployment Steps:
+## Deployment Steps
 Step 1) Initialize Terraform
 ```bash
 terraform init
