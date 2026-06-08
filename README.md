@@ -65,12 +65,20 @@ ansible-playbook -i "$(terraform output -raw public_ip)," -u ubuntu --private-ke
 _Installs Java/tmux, accepts the game EULA, deploys the graceful-shutdown service, and boots the application._
 
 Step 4) Verification & Connection
-```
+```bash
 nmap -sV -Pn -p T:25565 <INSTANCE_PUBLIC_IP>
 ```
+
 _Verify using Nmap or connect using the Minecraft client._
 
 ### Expected Output:
  - Port: `25565/tcp`
  - State: `open`
  - Version: `Minecraft 1.21.1`
+
+### Connection via Minecraft Client
+1. Launch the **Minecraft Launcher** and start the game on version **1.21.1**.
+2. Select **Multiplayer** from the main menu.
+3. Click the **Direct Connection** or **Add Server** button.
+4. Paste your `<INSTANCE_PUBLIC_IP>` into the **Server Address** field.
+5. Click **Join Server** to connect to the server.
