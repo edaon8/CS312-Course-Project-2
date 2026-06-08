@@ -4,8 +4,8 @@ By Ethan Daon
 ## Background
  - **What**: Fully automated end-to-end cloud provisioning and configuration for a persistent Minecraft server on AWS.
  - **How**:
-  - [Terraform](https://developer.hashicorp.com/terraform) provisions a custom Security Group and a `t3.medium` EC2 instance.
-  - [Ansible](https://docs.ansible.com/) configures the system runtime environment via OpenSSH.
+   - [Terraform](https://developer.hashicorp.com/terraform) provisions a custom Security Group and a `t3.medium` EC2 instance.
+   - [Ansible](https://docs.ansible.com/) configures the system runtime environment via OpenSSH.
  - **Predecessor Fix**: Replaced the previous admin's unstable setup with a dedicated `systemd` wrapper.
 ___
 
