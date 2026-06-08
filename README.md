@@ -82,3 +82,9 @@ _Verify using Nmap or connect using the Minecraft client._
 3. Click the **Direct Connection** or **Add Server** button.
 4. Paste your `<INSTANCE_PUBLIC_IP>` into the **Server Address** field.
 5. Click **Join Server** to connect to the server.
+
+## References
+ - [HashiCorp Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+ - [Ansible Playbook Directives Guide](https://docs.ansible.com/projects/ansible/latest/playbook_guide/index.html)
+ - [Systemd Service Unit Specifications](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html?)
+ - [GitHub Markdown Documentation Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
