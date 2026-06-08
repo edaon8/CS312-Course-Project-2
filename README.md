@@ -37,7 +37,7 @@ graph TD
     subgraph Target Machine State
         EC2 --> Java[OpenJDK 21 JRE]
         EC2 --> Tmux[Tmux Sockets]
-        EC2 --> Systemd[systemd Auto-Restart/Stop]
+        EC2 --> Systemd[Systemd Auto-Restart/Stop]
     end
 
     style Local fill:#f9f,stroke:#333,stroke-width:2px
