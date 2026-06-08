@@ -1,0 +1,56 @@
+---
+- name: Configure Dedicated Minecraft Server Architecture
+  hosts: all
+  become: true
+  vars:
+    mc_dir: "/home/ubuntu/minecraft"
+    download_url: "https://piston-data.mojang.com/v1/objects/450698d186252918290f42361730032e18588506/server.jar"
+
+  tasks:
+    - name: Update apt package manager cache
+      apt:
+        update_cache: yes
+
+    - name: Install Runtime Dependencies (Java 21 & Tmux)
+      apt:
+        name:
+          - openjdk-21-jre-headless
+          - tmux
+        state: present
+
+    - name: Create working directory for application binaries
+      file:
+        path: "{{ mc_dir }}"
+        state: directory
+        owner: ubuntu
+        group: ubuntu
+        mode: '0755'
+
+    - name: Download official Minecraft Server engine binary
+      get_url:
+        url: "{{ download_url }}"
+        dest: "{{ mc_dir }}/server.jar"
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
+
+    - name: Accept the End User License Agreement (EULA)
+      lineinfile:
+        path: "{{ mc_dir }}/eula.txt"
+        line: "eula=true"
+        create: yes
+        owner: ubuntu
+        group: ubuntu
+
+    - name: Deploy the systemd lifecycle unit file template
+      template:
+        src: templates/minecraft.service.j2
+        dest: /etc/systemd/system/minecraft.service
+        mode: '0644'
+
+    - name: Reload systemd configuration database and start service instance
+      systemd:
+        name: minecraft
+        daemon_reload: yes
+        state: started
+        enabled: yes
