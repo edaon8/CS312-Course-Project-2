@@ -67,9 +67,6 @@ Step 3) Automate Server Configuration
 ```bash
 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i "$(terraform output -raw public_ip)," -u ubuntu --private-key "./your-aws-key.pem" playbook.yml
 ```
-```bash
-ansible-playbook -i "<INSTANCE_PUBLIC_IP>," -u ubuntu --private-key /path/to/your-key.pem playbook.yml
-```
 _Installs Java/tmux, accepts the game EULA, deploys the graceful-shutdown service, and boots the application._
 
 Step 4) Verification & Connection
