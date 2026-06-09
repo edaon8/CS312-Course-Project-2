@@ -42,21 +42,24 @@ ___
 ## Pipeline Diagram
 ```mermaid
 graph TD
-    Local[Local Workstation] -->|1. terraform apply| AWS[AWS Cloud Endpoint]
-    AWS --> SG[Security Group Firewall]
-    AWS --> EC2[EC2 Compute Instance]
+    Local[Local Workstation] -->|1. terraform apply| AWS[AWS Cloud Target]
     
-    Local -->|2. ansible-playbook via SSH| EC2
-    
-    subgraph Target Machine State
-        EC2 --> Java[OpenJDK 21 JRE]
-        EC2 --> Tmux[Tmux Sockets]
-        EC2 --> Systemd[Systemd Auto-Restart/Stop]
+    subgraph AWS Cloud Infrastructure
+        SG[Security Group Firewall] -->|Permits Port 25565/22| EC2
+        EC2[EC2 Compute Instance]
     end
 
-    style Local fill:#f9f,stroke:#333,stroke-width:2px
-    style AWS fill:#bbf,stroke:#333,stroke-width:2px
-    style Target Machine State fill:#f96,stroke:#333,stroke-width:1px
+    Local -->|2. ansible-playbook via SSH| EC2
+
+    subgraph Target Machine State [EC2 OS Environment]
+        EC2 --> Java[OpenJDK 21 JRE]
+        EC2 --> Tmux[Tmux Session Socket]
+        EC2 --> Systemd[Systemd Service Management]
+    end
+
+    style Local fill:#eaeaea,stroke:#333,stroke-width:2px
+    style AWS Cloud Infrastructure fill:#d1e8ff,stroke:#0066cc,stroke-width:1px
+    style Target Machine State fill:#ffe6cc,stroke:#d79b00,stroke-width:1px
 ```
 ___
 ## Deployment Steps
