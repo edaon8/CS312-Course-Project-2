@@ -22,7 +22,7 @@ aws_access_key_id=ASIAXXXXXXXXXXXXXXXX
 aws_secret_access_key=keHFnbm8FH5NvpBhdEXAMPLEKEY
 aws_session_token=IqkvwGZisdv...
 ```
-Then create a directory and file to paste them to
+Then create a directory and file to paste them into it.
 ```bash
 mkdir -p ~/.aws
 nano ~/.aws/credentials
