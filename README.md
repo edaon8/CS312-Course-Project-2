@@ -34,8 +34,8 @@ nano ~/.aws/credentials
 ```
 Also, be sure to download the SSH key (PEM) by clicking the button and modify the permissions.
 ```bash
-cp ./labuser.pem ~/labuser.pem
-chmod 400 ~/labuser.pem
+cp ./labsuser.pem ~/labsuser.pem
+chmod 400 ~/labsuser.pem
 ```
 ___
 
@@ -74,7 +74,7 @@ _Provisions the virtual server hardware, network rules, and outputs the public I
 
 Step 3) Automate Server Configuration
 ```bash
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i "$(terraform output -raw public_ip)," -u ubuntu --private-key "~/labuser.pem" playbook.yml
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i "$(terraform output -raw public_ip)," -u ubuntu --private-key "~/labsuser.pem" playbook.yml
 ```
 _Installs Java/tmux, accepts the game EULA, deploys the graceful-shutdown service, and boots the application._
 
