@@ -15,7 +15,7 @@ ___
  - **Software**: Terraform v1.5+, Ansible v2.15+, AWS CLI v2+, and OpenSSH Client (optional Nmap v7.9X+)
 
 ### Environment & Authentication Setup
-Go to the AWS Academy Learner Lab page and click the AWS Details button. Then copy your temporary AWS Academy tokens.
+Go to the AWS Academy Learner Lab page and click the `AWS Details` button. Then copy your temporary AWS Academy tokens.
 ```Ini
 [default]
 aws_access_key_id=ASIAXXXXXXXXXXXXXXXX
