@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "minecraft_sg" {
-  name        = "minecraft-sg-v2"
+  name        = "minecraft-sg-v3"
   description = "Managed by Terraform for Acme Corp Minecraft Server"
 
   ingress {
