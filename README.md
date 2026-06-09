@@ -12,7 +12,8 @@ ___
 ## Requirements
 ### Local Workspace Tools
  - **OS Environment**: Linux or Windows Subsystem for Linux (WSL) with Ubuntu
- - **Software**: Terraform v1.5+, Ansible v2.15+, AWS CLI v2+, and OpenSSH Client (optional Nmap v7.9X+)
+ - **Software**: Terraform v1.5+, Ansible v2.15+, AWS CLI v2+, and OpenSSH Client
+   - Nmap v7.9X+ or Minecraft 1.21.11
 
 ### Environment & Authentication Setup
 Clone this repository to your machine using git.
@@ -91,7 +92,7 @@ _Verify using Nmap or connect using the Minecraft client._
 ### Expected Output:
  - Port: `25565/tcp`
  - State: `open`
- - Version: `Minecraft 1.21.1`
+ - Version: `Minecraft 1.21.11`
 
 ### Connection via Minecraft Client
 1. Launch the **Minecraft Launcher** and start the game on version **1.21.11**.
