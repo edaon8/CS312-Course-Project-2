@@ -94,7 +94,7 @@ _Verify using Nmap or connect using the Minecraft client._
  - Version: `Minecraft 1.21.1`
 
 ### Connection via Minecraft Client
-1. Launch the **Minecraft Launcher** and start the game on version **1.21.1**.
+1. Launch the **Minecraft Launcher** and start the game on version **1.21.11**.
 2. Select **Multiplayer** from the main menu.
 3. Click the **Direct Connection** or **Add Server** button.
 4. Paste your `<INSTANCE_PUBLIC_IP>` into the **Server Address** field.
