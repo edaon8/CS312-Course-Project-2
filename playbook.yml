@@ -32,15 +32,16 @@
         dest: "{{ mc_dir }}/server.jar"
         owner: ubuntu
         group: ubuntu
-        mode: '0644'
+        mode: '0755'  # Changed to 0755 so it is explicitly executable
 
     - name: Accept the End User License Agreement (EULA)
       lineinfile:
         path: "{{ mc_dir }}/eula.txt"
         line: "eula=true"
         create: yes
-        owner: ubuntu
-        group: ubuntu
+        owner: ubuntu  # Added explicitly
+        group: ubuntu  # Added explicitly
+        mode: '0644'   # Added explicitly
 
     - name: Deploy the systemd lifecycle unit file template
       template:
