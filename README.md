@@ -34,7 +34,7 @@ nano ~/.aws/credentials
 ```
 Also, be sure to download the SSH key (PEM) by clicking the button and modify the permissions.
 ```bash
-cp ./labsuser.pem ~/labsuser.pem
+cp ./labuser.pem ~/labuser.pem
 chmod 400 ~/labuser.pem
 ```
 ___
