@@ -15,12 +15,17 @@ ___
  - **Software**: Terraform v1.5+, Ansible v2.15+, AWS CLI v2+, and OpenSSH Client (optional Nmap v7.9X+)
 
 ### Environment & Authentication Setup
-Copy and paste your temporary AWS Academy tokens into a file:
-```bash
+Copy your temporary AWS Academy tokens.
+```Ini
 [default]
 aws_access_key_id=ASIAXXXXXXXXXXXXXXXX
 aws_secret_access_key=keHFnbm8FH5NvpBhdEXAMPLEKEY
 aws_session_token=IqkvwGZisdv...
+```
+Then create a directory and file to paste them to
+```bash
+mkdir -p ~/.aws
+nano ~/.aws/credentials
 ```
 Also, download the SSH key (PEM) by clicking the button.
 ___
