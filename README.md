@@ -22,7 +22,7 @@ aws_access_key_id=ASIAXXXXXXXXXXXXXXXX
 aws_secret_access_key=keHFnbm8FH5NvpBhdEXAMPLEKEY
 aws_session_token=IqkvwGZisdv...
 ```
-Also, download the SSH kep (PEM) by clicking the button.
+Also, download the SSH key (PEM) by clicking the button.
 ___
 
 ## Pipeline Diagram
