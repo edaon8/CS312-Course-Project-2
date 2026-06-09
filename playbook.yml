@@ -4,7 +4,7 @@
   become: true
   vars:
     mc_dir: "/home/ubuntu/minecraft"
-    download_url: "https://piston-data.mojang.com/v1/objects/450698d186252918290f42361730032e18588506/server.jar"
+    download_url: "https://piston-data.mojang.com/v1/objects/90f9c80aeef3966343e661a1487b7918c90ae61d/server.jar"
 
   tasks:
     - name: Update apt package manager cache
