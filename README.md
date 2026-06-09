@@ -64,7 +64,7 @@ _Creates the necessary cloud provider infrastructure modules._
 
 Step 2) Build Cloud Infrastructure
 ```bash
-terraform apply -var="key_name=your-aws-key.pem" -auto-approve
+terraform apply -var="key_name=your-aws-key" -auto-approve
 ```
 _Provisions the virtual server hardware, network rules, and outputs the public IP address._
 
