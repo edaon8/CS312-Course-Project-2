@@ -15,6 +15,11 @@ ___
  - **Software**: Terraform v1.5+, Ansible v2.15+, AWS CLI v2+, and OpenSSH Client (optional Nmap v7.9X+)
 
 ### Environment & Authentication Setup
+Clone this repository to your machine using git.
+```bash
+git clone https://github.com/edaon8/CS312-Course-Project-2
+cd CS312-Course-Project-2
+```
 Go to the AWS Academy Learner Lab page and click the `AWS Details` button. Then copy your temporary AWS Academy tokens.
 ```Ini
 [default]
